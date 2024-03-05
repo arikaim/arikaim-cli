@@ -1,0 +1,29 @@
+{
+  "name": "@arikaim/arikaim",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Arikam CMS cli",
+  "keywords": [
+    "arikaim cli",
+    "arikaim cms",
+    "arikaim"
+  ],
+  "author": "Konstantin Atanasov",
+  "main": "./cli.js",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^8.3.0",
+    "mjml": "^4.15.3"
+  },
+  "bin": {
+    "arikaim": "node ./cli.js"
+  },
+  "scripts": {
+    "arikaim": "node ./cli.js"
+  },
+  "exports": {
+    "./commands": "./src/commands",
+    "./*": "./src/*"
+  },
+  "license": "GPL-3.0-or-later"
+}
