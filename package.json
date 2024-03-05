@@ -1,6 +1,6 @@
 {
   "name": "@arikaim/arikaim",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Arikam CMS cli",
   "keywords": [
@@ -9,17 +9,17 @@
     "arikaim"
   ],
   "author": "Konstantin Atanasov",
-  "main": "./cli.js",
+  "main": "./src/cli.js",
   "dependencies": {
     "chalk": "^3.0.0",
     "commander": "^8.3.0",
     "mjml": "^4.15.3"
   },
   "bin": {
-    "arikaim": "node ./cli.js"
+    "arikaim": "./bin/arikaim"
   },
   "scripts": {
-    "arikaim": "node ./cli.js"
+    "arikaim": "./src/cli.js"
   },
   "exports": {
     "./commands": "./src/commands",

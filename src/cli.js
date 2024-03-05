@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+'use strict';
 
 /**
  * Arikaim
@@ -8,9 +8,7 @@
  * @license     http://www.arikaim.com/license
 */
 
-'use strict';
-
-import './src/global.js';
+import '@arikaim/arikaim/global.js';
 import { Command } from 'commander';
 import { default as configCommand } from "@arikaim/arikaim/commands/create-config.js";
 import { default as emailCommand } from "@arikaim/arikaim/commands/email/email.js";
@@ -19,7 +17,7 @@ writeLn('\nArikaim cli\n','blue');
 
 const cli = new Command();
 
-cli.version('0.0.1')
+cli.version('0.0.2')
     .option('-help','Show help')
     .description('');
 
