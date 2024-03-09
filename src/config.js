@@ -7,7 +7,7 @@
 */
 
 import { readFileSync, existsSync, writeFileSync } from 'fs';
-import Path from './path.js';
+import Path from './common/path.js';
 
 export default class Config {
 

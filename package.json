@@ -13,7 +13,9 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "commander": "^8.3.0",
-    "mjml": "^4.15.3"
+    "mjml": "^4.15.3",
+    "mustache": "^4.2.0",
+    "prompts": "^2.4.2"
   },
   "bin": {
     "arikaim": "./bin/arikaim"
@@ -23,6 +25,7 @@
   },
   "exports": {
     "./commands": "./src/commands",
+    "./common": "./src/common",
     "./*": "./src/*"
   },
   "license": "GPL-3.0-or-later"

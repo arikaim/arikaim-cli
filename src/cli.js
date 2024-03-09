@@ -8,25 +8,21 @@
  * @license     http://www.arikaim.com/license
 */
 
-import '@arikaim/arikaim/global.js';
+import '@arikaim/arikaim/common/global.js';
 import { Command } from 'commander';
-import { default as configCommand } from "@arikaim/arikaim/commands/create-config.js";
+import { default as configCommand } from "@arikaim/arikaim/commands/config/config.js";
 import { default as emailCommand } from "@arikaim/arikaim/commands/email/email.js";
+import { default as helpCommand } from "@arikaim/arikaim/commands/help.js";
 
 writeLn('\nArikaim cli\n','blue');
 
 const cli = new Command();
 
-cli.version('0.0.2')
+cli.version('0.0.3')
     .option('-help','Show help')
     .description('');
 
-cli.command('help')
-    .description('Help')
-    .action((env, options) => {        
-        writeLn('\nHelp\n');
-});
-
+cli.addCommand(helpCommand);
 cli.addCommand(configCommand);
 cli.addCommand(emailCommand);
 

@@ -7,14 +7,14 @@
  * @license     http://www.arikaim.com/license
 */
 
-import Config from "@arikaim/arikaim/config.js";
+import { File } from "@arikaim/arikaim/common/file.js";
 import { Command } from 'commander';
 
+
+function createConfig(env,options) {
+}
+
 export default new Command()
-    .name('create-config-file')
+    .name('create')
     .description('Create default config file')
-    .action((env,options) => {        
-        writeLn('\Create default config file\n');
-        Config.createConfigFile();
-        writeLn('\nSuccessfully created\n','green');
-    });
+    .action(createConfig);
