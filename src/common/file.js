@@ -10,7 +10,7 @@
 import { readFileSync, existsSync, writeFileSync } from 'fs';
 
 
-export default class File {
+export class File {
 
     static readJSONFile(fileName) {
         if (existsSync(fileName) == false) {
