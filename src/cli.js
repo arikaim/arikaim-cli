@@ -16,7 +16,7 @@ import { default as helpCommand } from "@arikaim/arikaim/commands/help.js";
 
 writeLn('\nArikaim cli\n','blue');
 
-const cli = new Command();
+export const cli = new Command();
 
 cli.version('0.0.3')
     .option('-help','Show help')
@@ -25,5 +25,3 @@ cli.version('0.0.3')
 cli.addCommand(helpCommand);
 cli.addCommand(configCommand);
 cli.addCommand(emailCommand);
-
-cli.parse();
