@@ -7,11 +7,40 @@
  * @license     http://www.arikaim.com/license
 */
 
-import { File } from "@arikaim/arikaim/common/file.js";
+import { default as Path } from "@arikaim/arikaim/common/path.js";
+import { renderTemplate } from "@arikaim/arikaim/common/template.js";
+import { existsSync, writeFileSync, mkdirSync } from 'fs';
 import { Command } from 'commander';
 
+var template = require('@arikaim/arikaim/templates/config.json');
 
 function createConfig(env,options) {
+   
+    var fileName = Path.getConfigPath(fileName) + 'services-config.json';
+    if (existsSync(fileName) == true) {
+        console.error('Config file exists: \n' + fileName);
+        return false;
+    } 
+    
+    // create dir
+    mkdirSync(Path.getConfigPath(),{ recursive: true });
+
+    var json = renderTemplate(JSON.stringify(template,null,2),{
+        host: '127.0.0.0',
+        port: 3000
+    });
+
+    try {
+        writeFileSync(fileName,json,{ flag: 'w+' });
+
+        writeLn('Config file created','green');
+        writeLn(fileName);
+
+        return existsSync(fileName);
+
+    } catch (error) {
+        console.error('An error has occurred creating config file',error);
+    }
 }
 
 export default new Command()

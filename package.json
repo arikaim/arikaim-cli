@@ -16,6 +16,7 @@
     "mjml": "^4.15.3",
     "mjml-image": "^4.15.3",
     "mustache": "^4.2.0",
+    "npm": "^10.5.0",
     "prompts": "^2.4.2"
   },
   "bin": {
@@ -26,6 +27,7 @@
   },
   "exports": {
     "./commands": "./src/commands",
+    "./templates": "./src/templates",
     "./common": "./src/common",
     "./*": "./src/*"
   },

@@ -14,14 +14,14 @@ export class File {
 
     static readJSONFile(fileName) {
         if (existsSync(fileName) == false) {
-            console.error('Config file not exists: ' + fileName);
+            console.error('File not exists: ' + fileName);
             return false;
         }
 
         var data = readFileSync(fileName,'utf8');   
 
         if (isJSON(data) == false) {
-            errorMessage('Error loading config file: ' + fileName);
+            errorMessage('Error loading json file: ' + fileName);
             return false;
         }
 

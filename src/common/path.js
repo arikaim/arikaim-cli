@@ -20,7 +20,15 @@ export default class Path {
     }
 
     static getArikaimPath() {
-        return Path.getRootPath() +  path.sep + 'arikaim' + path.sep;
+        return Path.getRootPath() + path.sep + 'arikaim' + path.sep;
+    }
+
+    static get storagePath() {
+        return Path.getArikaimPath() + 'storage' + path.sep;
+    }
+
+    static get storagePublicPath() {
+        return Path.storagePath + 'public' + path.sep;
     }
 
     static getBasePath() {

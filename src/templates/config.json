@@ -1,0 +1,34 @@
+{
+    "port": "{{port}}",
+    "host": "{{host}}",
+    "settings": {
+        "primaryTemplate": "starter"
+    },
+    "cors": {
+        "origin": "http://localhost",
+        "credentials": true
+    },
+    "database": {
+        "type": "mysql",
+        "host" : "127.0.0.1",
+        "username" : "db user name here",
+        "password" : "db password here",
+        "database" : "db name",
+        "dialect": "mysql",
+        "synchronize": true,
+        "logging": false
+    }, 
+    "socket": {
+        "cookie": true,
+        "withCredentials": true,
+        "cors": {
+            "origin": "localhost",
+            "allowedHeaders": ["token","tokenType"],
+            "methods": ["GET","POST","PUT"],
+            "credentials": true
+        }
+    },
+    "php": {
+        "session_storage": ""
+    }
+}
