@@ -7,12 +7,12 @@
  * @license     http://www.arikaim.com/license
 */
 
-import { readFileSync } from 'fs';
 import Path from '@arikaim/arikaim/common/path.js';
+import { File } from '@arikaim/arikaim/common/file.js';
 
 export default class ArikaimPackage {
   
-    static loadPackageDescriptor(name,packageType) {
+    static loadPackageDescriptor(name, packageType) {
         var path;
         packageType = (isEmpty(packageType) == true) ? 'template' : packageType;
 
@@ -29,12 +29,9 @@ export default class ArikaimPackage {
         }
 
         try {
-            var json = readFileSync(path + 'arikaim-package.json','utf8');  
-            // merge data
-            return JSON.parse(json);  
+            return File.readJSONFile(path + 'arikaim-package.json');  
         } catch (error) {
             writeLn(error);
-
             return null;
         }
     }
