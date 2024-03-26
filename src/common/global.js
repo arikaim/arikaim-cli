@@ -39,7 +39,7 @@ global.errorMessage = function(message) {
 }
 
 global.include = function(name) {
-    return require(Path.getBasePath() + name);
+    return require(Path.base() + name);
 }
 
 global.isFunction = function(variable) {

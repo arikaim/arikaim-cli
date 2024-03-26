@@ -13,18 +13,10 @@ import { readFileSync, existsSync, writeFileSync } from 'fs';
 export class File {
 
     static readJSONFile(fileName) {
-        if (existsSync(fileName) == false) {
-            console.error('File not exists: ' + fileName);
-            return false;
-        }
-
         var data = readFileSync(fileName,'utf8');   
-
         if (isJSON(data) == false) {
-            errorMessage('Error loading json file: ' + fileName);
             return false;
         }
-
         return JSON.parse(data);
     }
 

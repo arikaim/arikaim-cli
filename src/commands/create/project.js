@@ -15,24 +15,24 @@ import Path from "@arikaim/arikaim/common/path.js";
 function createFolder(path) {
     mkdirSync(path,{ recursive: true });
     writeLn('Created folder','green');
-    writeLn(path);
+    writeLn(Path.getRelative(path));
 }
 
 function createProjectFolders(env,options) {
     // create config dir
-    createFolder(Path.getConfigPath());
+    createFolder(Path.config());
     // create view path
-    createFolder(Path.viewPath);
+    createFolder(Path.view());
     // create templates path
-    createFolder(Path.templatesPath);
+    createFolder(Path.templates());
     // create libraries path
-    createFolder(Path.librariesPath);
+    createFolder(Path.libraries());
     // create sevices path
-    createFolder(Path.getServicesPath());
+    createFolder(Path.services());
     // create storage path
-    createFolder(Path.storagePath);
+    createFolder(Path.storage());
     // create storage public path
-    createFolder(Path.storagePublicPath);
+    createFolder(Path.publicStorage());
 
     writeLn('Done\n','green');
 }

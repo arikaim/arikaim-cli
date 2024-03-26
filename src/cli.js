@@ -16,7 +16,7 @@ import { default as createCommand } from "@arikaim/arikaim/commands/create/creat
 import { default as helpCommand } from "@arikaim/arikaim/commands/help.js";
 import { default as startCommand } from "@arikaim/arikaim/commands/start.js";
 
-writeLn('\nArikaim cli\n','blue');
+writeLn('\nArikaim\n','blue');
 
 export const cli = new Command();
 

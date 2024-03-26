@@ -18,13 +18,13 @@ export default class ArikaimPackage {
 
         switch (packageType) {
             case 'template':
-                path = Path.templatePath(name);
+                path = Path.template(name);
                 break;
             case 'service':
-                path = Path.getServicesPath(name);
+                path = Path.service(name);
                 break;
             case 'library':
-                path = Path.libraryPath(name);
+                path = Path.library(name);
                 break;           
         }
 

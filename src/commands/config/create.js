@@ -16,14 +16,14 @@ var template = require('@arikaim/arikaim/templates/config.json');
 
 function createConfig(env,options) {
    
-    var fileName = Path.getConfigPath(fileName) + 'services-config.json';
+    var fileName = Path.config(fileName) + 'services-config.json';
     if (existsSync(fileName) == true) {
         console.error('Config file exists: \n' + fileName);
         return false;
     } 
     
     // create dir
-    mkdirSync(Path.getConfigPath(),{ recursive: true });
+    mkdirSync(Path.config(),{ recursive: true });
 
     var json = renderTemplate(JSON.stringify(template,null,2),{
         host: '127.0.0.0',
