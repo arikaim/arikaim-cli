@@ -1,0 +1,8 @@
+{      
+    "title": "{{ title }}",
+    "version": "0.0.1",
+    "name": "{{ name }}",
+    "package-type": "service",
+    "description": "{{ description }}",
+    "type": "nodejs"
+}
