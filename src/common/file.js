@@ -25,7 +25,7 @@ export class File {
             writeFileSync(fileName,JSON.stringify(data,null,2),'utf8');
             return existsSync(fileName);
         } catch (error) {
-            console.error('An error has occurred creating config file',error);
+            errorMessage(error);
         }
     }
 }

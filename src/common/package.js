@@ -12,21 +12,25 @@ import { File } from '@arikaim/arikaim/common/file.js';
 
 export default class ArikaimPackage {
   
-    static loadPackageDescriptor(name, packageType) {
-        var path;
+    static getPackagePath(name, packageType) {
         packageType = (isEmpty(packageType) == true) ? 'template' : packageType;
-
         switch (packageType) {
             case 'template':
-                path = Path.template(name);
-                break;
+                return Path.template(name);
+              
             case 'service':
-                path = Path.service(name);
-                break;
+                return Path.service(name);
+               
             case 'library':
-                path = Path.library(name);
-                break;           
+                return  Path.library(name);
+                 
         }
+
+        return null;
+    }
+
+    static loadPackageDescriptor(name, packageType) {
+        var path = ArikaimPackage.getPackagePath(name,packageType);
 
         try {
             return File.readJSONFile(path + 'arikaim-package.json');  
@@ -34,5 +38,17 @@ export default class ArikaimPackage {
             writeLn(error);
             return null;
         }
+    }
+
+    static writePackageDescriptor(name, data, packageType) {
+        var path = ArikaimPackage.getPackagePath(name,packageType);
+        
+        try {
+            return File.writeJSONFile(path + 'arikaim-package.json',data);  
+        } catch (error) {
+            writeLn(error);
+            return false;
+        }
+
     }
 }
