@@ -9,7 +9,6 @@
 
 import { readFileSync, existsSync, writeFileSync } from 'fs';
 
-
 export class File {
 
     static readJSONFile(fileName) {

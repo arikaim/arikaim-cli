@@ -9,6 +9,7 @@
 
 import Path from '@arikaim/arikaim/common/path.js';
 import { File } from '@arikaim/arikaim/common/file.js';
+import { readdirSync,statSync } from 'fs';
 
 export default class ArikaimPackage {
   
@@ -22,13 +23,27 @@ export default class ArikaimPackage {
                 return Path.service(name);
                
             case 'library':
-                return  Path.library(name);
-                 
+                return Path.library(name);  
         }
 
         return null;
     }
 
+    static readPackageFiles(name, path, packageType) {
+        var packagePath = ArikaimPackage.getPackagePath(name,packageType);
+        if (packagePath == null) {
+            return null;
+        }
+
+        packagePath = packagePath + path + Path.sep;
+
+        var files = readdirSync(packagePath).filter(function (file) {
+            return (statSync(packagePath + file).isDirectory() == false);
+        });
+
+        return files;
+    }
+    
     static loadPackageDescriptor(name, packageType) {
         var path = ArikaimPackage.getPackagePath(name,packageType);
 
