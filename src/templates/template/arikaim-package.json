@@ -1,0 +1,38 @@
+{      
+    "title": "{{ title }}",
+    "version": "1.0.0",
+    "name": "{{ name }}",
+    "package-type": "template",
+    "type": "nodejs",
+    "routes": [
+        {
+            "path": "/",         
+            "home": true,  
+            "page": "home",
+            "name": "Home"                   
+        }
+    ],
+    "languages": [
+        "en"      
+    ],
+    "themes": [
+        "default"
+    ],
+    "default-theme": "default",
+    "include": {     
+        "components": [    
+        ],           
+        "css": [
+            "preflight.css",
+            "style.css",
+            "tailwind.min.css"
+        ],        
+        "library": [
+            "jquery",                                
+            "arikaim",
+            "arikaim-ui"                 
+        ]       
+    },
+    "modules": {
+    }
+}

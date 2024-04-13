@@ -10,11 +10,13 @@
 import { Command } from 'commander';
 import { default as createProjectFolders } from "@arikaim/arikaim/commands/create/project.js";
 import { default as createService } from "@arikaim/arikaim/commands/create/service.js";
+import { default as createTemplate } from "@arikaim/arikaim/commands/create/template.js";
 
 const command = new Command();
 var group = command.command('create');
 
 group.addCommand(createProjectFolders);
 group.addCommand(createService);
+group.addCommand(createTemplate);
 
 export default group;

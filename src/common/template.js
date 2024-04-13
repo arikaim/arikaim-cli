@@ -11,12 +11,20 @@ import { readFileSync } from 'fs';
 import Mustache from 'mustache';
 
 
-export function loadTemplate(fileName, vars) {
-    var templateCode = readFileSync(fileName,'utf8');   
+export function renderTemplate(fileName, vars) {
+    var templateCode = require(fileName);   
 
-    return renderTemplate(templateCode,vars);
+    if (isObject(templateCode) == true) {
+        templateCode = JSON.stringify(templateCode,null,'\t');
+    }
+
+    return renderCode(templateCode,vars);
 }
 
-export function renderTemplate(templateCode, vars) {
+export function renderCode(templateCode, vars) {
     return Mustache.render(templateCode,vars);
 }
+
+export function requireText(name, require) {
+    return readFileSync(require.resolve(name)).toString();
+};

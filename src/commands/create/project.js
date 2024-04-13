@@ -8,15 +8,9 @@
 */
 
 import { Command } from 'commander';
-import { mkdirSync } from 'fs';
+
 import Path from "@arikaim/arikaim/common/path.js";
-
-
-function createFolder(path) {
-    mkdirSync(path,{ recursive: true });
-    writeLn('Created folder','green');
-    writeLn(Path.getRelative(path));
-}
+import { createFolder } from "@arikaim/arikaim/common/console.js";
 
 function createProjectFolders(env,options) {
     // create config dir
