@@ -1,6 +1,6 @@
 {
   "name": "@arikaim/arikaim",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Arikam CMS cli",
   "keywords": [
@@ -23,7 +23,8 @@
     "arikaim": "./bin/arikaim"
   },
   "scripts": {
-    "arikaim": "./src/cli.js"
+    "arikaim": "node ./src/cli.js",
+    "cli": "node ./src/index.js"
   },
   "exports": {
     "./commands": "./src/commands",

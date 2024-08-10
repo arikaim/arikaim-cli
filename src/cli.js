@@ -33,3 +33,18 @@ cli.addCommand(createCommand);
 cli.addCommand(startCommand);
 cli.addCommand(serviceCommand);
 cli.addCommand(queueCommand);
+
+cli.action(loadServicesCommands);
+
+async function loadServicesCommands() {
+    
+    try {
+        var { arikaimServer: arikaimServer } = await import('@arikaim/server/server.js');
+        // services 
+        writeLn('\Load services console commands\n','green');
+        console.log(arikaimServer.services);
+    }
+    catch (e) {   
+        return false;
+    }
+}
