@@ -10,6 +10,7 @@
   ],
   "author": "Konstantin Atanasov",
   "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "dependencies": {
     "chalk": "^3.0.0",
     "commander": "^8.3.0",
