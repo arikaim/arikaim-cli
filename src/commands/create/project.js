@@ -9,8 +9,8 @@
 
 import { Command } from 'commander';
 
-import Path from "@arikaim/arikaim/common/path.js";
-import { createFolder } from "@arikaim/arikaim/common/console.js";
+import Path from "@arikaim/cli/common/path.js";
+import { createFolder } from "@arikaim/cli/common/console.js";
 
 function createProjectFolders(env,options) {
     // create config dir

@@ -15,7 +15,6 @@ async function runQueueWorker(env,options) {
         var { default: QueueWorker } = await import('@arikaim/queue/worker.js');
     }
     catch (e) {
-        console.log(e);
         errorMessage('Arikaim queue package not installed');
         return false;
     }

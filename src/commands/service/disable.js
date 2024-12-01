@@ -8,7 +8,7 @@
 */
 
 import { Command } from 'commander';
-import ArikaimPackage from "@arikaim/arikaim/common/package.js";
+import ArikaimPackage from "@arikaim/cli/common/package.js";
 
 function disableService(args, options) {
     writeLn('Disable service','green');   

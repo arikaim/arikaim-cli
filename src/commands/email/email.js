@@ -8,7 +8,7 @@
 */
 
 import { Command } from 'commander';
-import { default as compileEmail } from "@arikaim/arikaim/commands/email/compile-mjml.js";
+import { default as compileEmail } from "@arikaim/cli/commands/email/compile-mjml.js";
 
 const command = new Command();
 var group = command.command('email');

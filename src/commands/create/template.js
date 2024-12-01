@@ -9,13 +9,13 @@
 
 import { Command } from 'commander';
 import { writeFileSync } from 'fs';
-import Path from "@arikaim/arikaim/common/path.js";
-import { createFolder } from "@arikaim/arikaim/common/console.js";
-import { renderTemplate, requireText } from "@arikaim/arikaim/common/template.js";
+import Path from "@arikaim/cli/common/path.js";
+import { createFolder } from "@arikaim/cli/common/console.js";
+import { renderTemplate, requireText } from "@arikaim/cli/common/template.js";
 
 
 function writeTemplateCssFile(fileName, templateName) {
-    var includeIcss = requireText('@arikaim/arikaim/templates/template/' + fileName,require);
+    var includeIcss = requireText('@arikaim/cli/templates/template/' + fileName,require);
     writeFileSync(Path.template(templateName) + 'css' + Path.sep + fileName,includeIcss,'utf8');
 }
 
@@ -32,7 +32,7 @@ function createService(args,options) {
     createFolder(Path.template(name) + 'themes');
     createFolder(Path.template(name) + 'images');
 
-    var code = renderTemplate('@arikaim/arikaim/templates/template/arikaim-package.json',{
+    var code = renderTemplate('@arikaim/cli/templates/template/arikaim-package.json',{
         name: name,
         title: 'Template'
     });
@@ -42,7 +42,7 @@ function createService(args,options) {
     writeTemplateCssFile('style.css',name);
     writeTemplateCssFile('preflight.css',name);
     // index.html
-    var indexHtml = requireText('@arikaim/arikaim/templates/template/index.html.txt',require);
+    var indexHtml = requireText('@arikaim/cli/templates/template/index.html.txt',require);
     writeFileSync(Path.template(name) + 'pages' + Path.sep + 'index.html',indexHtml,'utf8');
 }
 

@@ -7,8 +7,8 @@
  * @license     http://www.arikaim.com/license
 */
 
-import Path from '@arikaim/arikaim/common/path.js';
-import { File } from '@arikaim/arikaim/common/file.js';
+import Path from '@arikaim/cli/common/path.js';
+import { File } from '@arikaim/cli/common/file.js';
 import { readdirSync,statSync } from 'fs';
 
 export default class ArikaimPackage {

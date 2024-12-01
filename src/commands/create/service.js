@@ -9,7 +9,7 @@
 
 import { Command } from 'commander';
 import { mkdirSync, writeFileSync } from 'fs';
-import Path from "@arikaim/arikaim/common/path.js";
+import Path from "@arikaim/cli/common/path.js";
 
 function createService(env,options) {
     writeLn('Create service','green');

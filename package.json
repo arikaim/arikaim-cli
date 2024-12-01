@@ -1,5 +1,5 @@
 {
-  "name": "@arikaim/arikaim",
+  "name": "@arikaim/cli",
   "version": "0.0.3",
   "type": "module",
   "description": "Arikam CMS cli",

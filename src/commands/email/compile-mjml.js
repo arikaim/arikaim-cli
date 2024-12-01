@@ -11,7 +11,7 @@ import { Command } from 'commander';
 import path from 'path';
 import { readFileSync, existsSync, writeFileSync } from 'fs';
 
-function compileEmail(env,options) {
+async function compileEmail(env,options) {
     writeLn('\Complie mjml file \n');
     var fileName = process.cwd().split("/").slice(-1);
     var currentPath = process.cwd() + path.sep
@@ -27,13 +27,8 @@ function compileEmail(env,options) {
     }
   
     try {
-        var data = readFileSync(currentPath + inputFile,{ 
-            encoding: 'utf8', 
-            flag: 'r' 
-        });
-        var output = mjml2html(data,{           
-        });
-
+        var data = readFileSync(currentPath + inputFile,"utf-8");
+        var output = await mjml2html(data);
         writeFileSync(currentPath + outputFile,output.html,'utf8');
     } catch (err) {
         writeLn(err,'red');

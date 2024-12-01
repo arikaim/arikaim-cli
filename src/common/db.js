@@ -8,10 +8,10 @@
  * 
 */
 
-import { loadConfig } from '@arikaim/server/system/config.js';
-import db from '@arikaim/server/db/db.js';
+//import { loadConfig } from '@arikaim/server/system/config.js';
+
 
 export async function dbConnect() {
-    var config = await loadConfig();
-    await db.connect(config.database);
+  //  var config = await loadConfig();
+    //await db.connect(config.database);
 }

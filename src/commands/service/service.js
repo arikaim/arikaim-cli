@@ -8,9 +8,9 @@
 */
 
 import { Command } from 'commander';
-import { default as enableService } from "@arikaim/arikaim/commands/service/enable.js";
-import { default as disableService } from "@arikaim/arikaim/commands/service/disable.js";
-import { default as installService } from "@arikaim/arikaim/commands/service/install.js";
+import { default as enableService } from "@arikaim/cli/commands/service/enable.js";
+import { default as disableService } from "@arikaim/cli/commands/service/disable.js";
+import { default as installService } from "@arikaim/cli/commands/service/install.js";
 
 const group = (new Command()).command('service');
 

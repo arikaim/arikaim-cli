@@ -7,12 +7,12 @@
  * @license     http://www.arikaim.com/license
 */
 
-import { default as Path } from "@arikaim/arikaim/common/path.js";
-import { renderTemplate } from "@arikaim/arikaim/common/template.js";
+import { default as Path } from "@arikaim/cli/common/path.js";
+import { renderTemplate } from "@arikaim/cli/common/template.js";
 import { existsSync, writeFileSync, mkdirSync } from 'fs';
 import { Command } from 'commander';
 
-var template = require('@arikaim/arikaim/templates/config.json');
+var template = require('@arikaim/cli/templates/config.json');
 
 function createConfig(env,options) {
    

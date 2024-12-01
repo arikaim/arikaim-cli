@@ -15,7 +15,6 @@ async function runServer(env,options) {
         var { default: ArikaimServicesServer } = await import('@arikaim/server/server.js');
     }
     catch (e) {
-        console.log(e);
         errorMessage('Arikaim server package not installed');
         return false;
     }

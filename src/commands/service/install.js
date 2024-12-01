@@ -8,10 +8,10 @@
 */
 
 import { Command } from 'commander';
-import Migration from "@arikaim/server/db/migration.js";
-import ArikaimPackage from "@arikaim/arikaim/common/package.js";
-import Path from "@arikaim/arikaim/common/path.js";
-import { dbConnect } from "@arikaim/arikaim/common/db.js";
+
+import ArikaimPackage from "@arikaim/cli/common/package.js";
+import Path from "@arikaim/cli/common/path.js";
+import { dbConnect } from "@arikaim/cli/common/db.js";
 
 
 async function installService(args, options) {
@@ -26,8 +26,7 @@ async function installService(args, options) {
 
     modelFiles.forEach((item) => {       
         writeLn('File ' + path + item);   
-        var migration = Migration.createFormFile(path + item,sequelize);
-        migration.up();
+       
     });
 
 }

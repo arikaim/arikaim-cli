@@ -8,7 +8,7 @@
 */
 
 import { Command } from 'commander';
-import { default as createConfig } from "@arikaim/arikaim/commands/config/create.js";
+import { default as createConfig } from "@arikaim/cli/commands/config/create.js";
 
 const command = new Command();
 var group = command.command('config');

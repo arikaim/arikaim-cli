@@ -8,9 +8,9 @@
 */
 
 import { Command } from 'commander';
-import { default as createProjectFolders } from "@arikaim/arikaim/commands/create/project.js";
-import { default as createService } from "@arikaim/arikaim/commands/create/service.js";
-import { default as createTemplate } from "@arikaim/arikaim/commands/create/template.js";
+import { default as createProjectFolders } from "@arikaim/cli/commands/create/project.js";
+import { default as createService } from "@arikaim/cli/commands/create/service.js";
+import { default as createTemplate } from "@arikaim/cli/commands/create/template.js";
 
 const command = new Command();
 var group = command.command('create');
