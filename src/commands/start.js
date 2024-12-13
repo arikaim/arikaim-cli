@@ -8,20 +8,20 @@
 */
 
 import { Command } from 'commander';
+import { importGlobal } from 'import-global';
 
 async function runServer(env,options) {
 
     try {
-        var { default: ArikaimServicesServer } = await import('@arikaim/server/server.js');
+        var { default: ArikaimServicesServer } = await importGlobal('@arikaim/server/server.js');
     }
-    catch (e) {
+    catch (e) {      
         errorMessage('Arikaim server package not installed');
         return false;
     }
 
     const server = new ArikaimServicesServer();
-    // boot
-    await server.boot();
+
     // run
     server.run();
 }
