@@ -22,9 +22,9 @@ writeLn('\nArikaim\n','blue');
 
 export const cli = new Command();
 
-cli.version('0.0.3')
+cli.version('v0.0.5')
     .option('-help','Show help')
-    .description('');
+    .description('Arikaim CLI');
 
 cli.addCommand(helpCommand);
 cli.addCommand(configCommand);

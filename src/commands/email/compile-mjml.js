@@ -27,8 +27,9 @@ async function compileEmail(env,options) {
     }
   
     try {
-        var data = readFileSync(currentPath + inputFile,"utf-8");
-        var output = await mjml2html(data);
+        const data = readFileSync(currentPath + inputFile,"utf-8");
+        const output = await mjml2html(data);
+    
         writeFileSync(currentPath + outputFile,output.html,'utf8');
     } catch (err) {
         writeLn(err,'red');
