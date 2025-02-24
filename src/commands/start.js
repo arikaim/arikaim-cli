@@ -13,17 +13,15 @@ import { importGlobal } from 'import-global';
 async function runServer(env,options) {
 
     try {
-        var { default: ArikaimServicesServer } = await importGlobal('@arikaim/server/server.js');
+        var { default: arikaimServer } = await importGlobal('@arikaim/server/server.js');
     }
     catch (e) {      
         errorMessage('Arikaim server package not installed');
         return false;
     }
-
-    const server = new ArikaimServicesServer();
-
+    
     // run
-    server.run();
+    arikaimServer.run();
 }
 
 export default new Command()
