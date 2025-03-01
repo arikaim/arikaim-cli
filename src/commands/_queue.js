@@ -12,7 +12,7 @@ import { Command } from 'commander';
 async function runQueueWorker(env,options) {
 
     try {
-        var { default: QueueWorker } = await import('@arikaim/queue/worker.js');
+        var { default: QueueWorker } = await import('@arikaim/server/queue/worker.js');
     }
     catch (e) {
         errorMessage('Arikaim queue package not installed');

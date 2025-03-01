@@ -16,7 +16,7 @@ import { default as createCommand } from "@arikaim/cli/commands/create/create.js
 import { default as helpCommand } from "@arikaim/cli/commands/help.js";
 import { default as startCommand } from "@arikaim/cli/commands/start.js";
 import { default as serviceCommand } from "@arikaim/cli/commands/service/service.js";
-import { default as queueCommand } from "@arikaim/cli/commands/queue.js";
+import { default as queueCommand } from "@arikaim/cli/commands/queue/queue.js";
 
 writeLn('\nArikaim\n','blue');
 
