@@ -8,12 +8,11 @@
 */
 
 import { Command } from 'commander';
-import { importGlobal } from 'import-global';
 
 async function runServer(env,options) {
 
     try {
-        var { default: arikaimServer } = await importGlobal('@arikaim/server/server.js');
+        var { default: arikaimServer } = await import('@arikaim/server/server.js');
     }
     catch (e) {      
         errorMessage('Arikaim server package not installed');

@@ -8,12 +8,11 @@
 */
 
 import { Command } from 'commander';
-import { importGlobal } from 'import-global';
 
 async function startWroker(env,options) {
 
     try {
-        var { default: worker } = await importGlobal('@arikaim/server/queue/worker.js');
+        var { default: worker } = await import('@arikaim/server/queue/worker.js');
     }
     catch (e) {      
         errorMessage('Arikaim server package not installed');

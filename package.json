@@ -1,6 +1,6 @@
 {
   "name": "@arikaim/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Arikam CMS cli",
   "keywords": [
@@ -14,7 +14,6 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "commander": "^8.3.0",
-    "import-global": "^1.1.1",
     "mjml": "5.0.0-alpha.6",
     "mjml-head-font": "5.0.0-alpha.6",
     "mustache": "^4.2.0",
