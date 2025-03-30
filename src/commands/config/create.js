@@ -8,7 +8,7 @@
 */
 
 import { default as Path } from "@arikaim/cli/common/path.js";
-import { renderTemplate } from "@arikaim/cli/common/template.js";
+import { renderCode } from "@arikaim/cli/common/template.js";
 import { existsSync, writeFileSync, mkdirSync } from 'fs';
 import { Command } from 'commander';
 
@@ -24,8 +24,8 @@ function createConfig(env,options) {
     
     // create dir
     mkdirSync(Path.config(),{ recursive: true });
-
-    var json = renderTemplate(JSON.stringify(template,null,2),{
+    
+    var json = renderCode(JSON.stringify(template,null,2),{
         host: '127.0.0.0',
         port: 3000
     });
