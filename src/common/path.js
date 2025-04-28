@@ -15,6 +15,10 @@ export default class Path {
         return path.sep;
     }
 
+    static getServerPath() {
+        return Path.root(false) + 'node_modules/@arikaim/server/dist/server.js';
+    }
+
     static getRelative(absolutePath) {
         return absolutePath.replace(Path.root(),'');
     }

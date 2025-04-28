@@ -12,9 +12,8 @@ import Path from "@arikaim/cli/common/path.js"
 
 async function startWroker(env,options) {
 
-    try {
-        const serverPath = Path.root(false) + 'node_modules/@arikaim/server/dist/queue/worker.js';
-        var { default: worker } = await import(serverPath);
+    try {      
+        var { default: worker } = await import(Path.getServerPath());
     }
     catch (e) {      
         errorMessage('Arikaim server package not installed');

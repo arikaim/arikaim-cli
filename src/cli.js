@@ -9,6 +9,7 @@
 */
 
 import '@arikaim/cli/common/global.js';
+import Path from "@arikaim/cli/common/path.js"
 import { Command } from 'commander';
 import { default as configCommand } from "@arikaim/cli/commands/config/config.js";
 import { default as emailCommand } from "@arikaim/cli/commands/email/email.js";
@@ -18,7 +19,7 @@ import { default as startCommand } from "@arikaim/cli/commands/start.js";
 import { default as serviceCommand } from "@arikaim/cli/commands/service/service.js";
 import { default as queueCommand } from "@arikaim/cli/commands/queue/queue.js";
 
-writeLn('\nArikaim\n','blue');
+writeLn('\nArikaim  \n','blue');
 
 export const cli = new Command();
 
@@ -34,17 +35,24 @@ cli.addCommand(startCommand);
 cli.addCommand(serviceCommand);
 cli.addCommand(queueCommand);
 
-cli.action(loadServicesCommands);
+// service commands
+await loadServicesCommands();
 
 async function loadServicesCommands() {
-    
-    try {
-        var { arikaimServer: arikaimServer } = await import('@arikaim/server/server.js');
-        // services 
-        writeLn('\Load services console commands\n','green');
-        console.log(arikaimServer.services);
+    try { 
+        var { default: arikaimServer } = await import(Path.getServerPath());
+        
+        // add console commands from services 
+        var commands = await arikaimServer.getConsoleCommands();
+
+        commands.forEach(command => {
+            cli.addCommand(command);
+        });      
+
+        return true;
     }
-    catch (e) {   
-        return false;
-    }
+    catch (e) {       
+        console.log(e.message);
+        return false;      
+    }   
 }

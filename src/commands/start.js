@@ -13,9 +13,7 @@ import Path from "@arikaim/cli/common/path.js"
 async function runServer(env,options) {
 
     try {
-        const serverPath = Path.root(false) + 'node_modules/@arikaim/server/dist/server.js';
-
-        var { default: arikaimServer } = await import(serverPath);
+        var { default: arikaimServer } = await import(Path.getServerPath());
     }
     catch (e) {      
         errorMessage('Arikaim server package not installed');
