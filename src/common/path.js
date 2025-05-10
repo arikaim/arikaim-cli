@@ -19,6 +19,10 @@ export default class Path {
         return Path.root(false) + 'node_modules/@arikaim/server/dist/server.js';
     }
 
+    static getQueueWorkerPath() {
+        return Path.root(false) + 'node_modules/@arikaim/server/dist/queue/worker.js';
+    }
+
     static getRelative(absolutePath) {
         return absolutePath.replace(Path.root(),'');
     }
